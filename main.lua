@@ -20,6 +20,13 @@ local octopusHeight = octopus.girl1Height
 local alreadyTouchedGirl1 = false
 local alreadyTouchedOctopus = false
 
+--add sounds to when the objects are being dragged
+local correctSound = audio.loadSound("Sounds/scream.mp3")
+local correctSoundChannel
+
+local correctSound = audio.loadSound("Sounds/girlScream.mp3")
+local correctSoundChannel
+
 --set the initial x and y position of myImage
 girl1.x = 400
 girl1.y = 350
@@ -36,6 +43,9 @@ local function OctopusListener(touch)
 	if (touch.phase == "began") then
 		if (alreadyTouchedGirl1 == false) then
 			alreadyTouchedOctopus = true
+
+correctSoundChannel = audio.play(correctSound)
+
 		end
 	end
 
@@ -63,6 +73,8 @@ local function Girl1Listener(touch)
 	if (touch.phase == "began") then
 		if (alreadyTouchedOctopus == false) then
 			alreadyTouchedGirl1 = true
+
+			correctSoundChannel = audio.play(correctSound)
 		end
 	end
 
@@ -80,3 +92,7 @@ end
 
 --add the respective listeners to each object
 girl1:addEventListener("touch", Girl1Listener)
+
+
+
+
