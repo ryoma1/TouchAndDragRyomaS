@@ -8,13 +8,11 @@
 display.setStatusBar(display.HiddenStatusBar)
 
 --local variables.
-local backgroundImage = display.newImageRect("Images/spacey.png", 2048, 1536)
+local backgroundImage = display.newImageRect("Images/background.png", 2048, 1536)
 local girl1 = display.newImageRect("Images/girl1.png", 150, 150)
-
---local girl1Width = girl1.width
---local girl1Height = girl1.height
-
 local octopus = display.newImageRect("Images/octopus.png", 150, 150)
+
+--set width and height of the octopus
 local octopusWidth = octopus.width
 local octopusHeight = octopus.girl1Height
 
@@ -24,10 +22,10 @@ local alreadyTouchedOctopus = false
 
 --set the initial x and y position of myImage
 girl1.x = 400
-girl1.y = 500
+girl1.y = 350
 
-octopus.x = 300
-octopus.y = 200
+octopus.x = 800
+octopus.y = 350
 
 --Function: OctopusListener
 --Input: touch listener
