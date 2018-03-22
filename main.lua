@@ -24,8 +24,8 @@ local alreadyTouchedOctopus = false
 local correctSound = audio.loadSound("Sounds/scream.mp3")
 local correctSoundChannel
 
-local correctSound = audio.loadSound("Sounds/girlScream.mp3")
-local correctSoundChannel
+local wrongSound = audio.loadSound("Sounds/girlScream.mp3")
+local wrongSoundChannel
 
 --set the initial x and y position of myImage
 girl1.x = 400
@@ -44,7 +44,7 @@ local function OctopusListener(touch)
 		if (alreadyTouchedGirl1 == false) then
 			alreadyTouchedOctopus = true
 
-correctSoundChannel = audio.play(correctSound)
+wrongSoundChannel = audio.play(wrongSound)
 
 		end
 	end
